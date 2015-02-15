@@ -1,0 +1,12 @@
+(lp0
+S'poi'
+p1
+aS'salary'
+p2
+aS'bonus'
+p3
+aS'expenses'
+p4
+aS'deferral_payments'
+p5
+a.

@@ -1,0 +1,76 @@
+---
+title: "Exploring the Enron dataset"
+output: html_document
+---
+
+###Tyler Byers
+
+###EDA for Udacity Intro to Machine Learning Final Project
+
+```{r}
+library(ggplot2); library(caret)
+```
+
+
+
+```{r, echo=FALSE}
+enron = read.csv('dataset.csv')
+```
+
+```{r some ggplots}
+ggplot(enron, aes(x = salary, y = bonus, color = poi)) + geom_point()
+ggplot(enron, aes(x = exercised_stock_options, y = total_stock_value,
+                  color = poi)) + geom_point()
+
+```
+
+```{r stock options}
+qplot(enron$exercised_stock_options/enron$total_stock_value, fill = enron$poi)
+```
+
+```{r from emails}
+ggplot(enron, aes(x = from_messages, y = from_this_person_to_poi, color = poi)) +
+     geom_point() + scale_x_continuous(limits = c(0,4000))
+qplot(enron$from_this_person_to_poi/enron$from_messages, fill = enron$poi)
+```
+
+```{r to emails}
+ggplot(enron, aes(x = to_messages, y = from_poi_to_this_person, color = poi)) +
+     geom_point()
+qplot(enron$from_poi_to_this_person/enron$to_messages, fill = enron$poi)
+qplot((enron$from_poi_to_this_person + enron$from_this_person_to_poi)/
+          (enron$from_messages + enron$to_messages), fill = enron$poi)
+```
+
+```{r plot all histograms}
+
+for (i in seq(2:length(names(enron)))) {
+  print(qplot(enron[,i], fill = enron$poi) + xlab(names(enron)[i])) 
+ 
+}
+
+```
+
+```{r salary to bonus ratio}
+qplot(enron$bonus/enron$salary, fill = enron$poi)
+```
+
+```{r expenses to salary ratio}
+qplot(enron$expenses/enron$salary, fill = enron$poi) + 
+    scale_x_continuous(limits = c(0,1))
+```
+
+```{r restricted stock}
+qplot(enron$restricted_stock/enron$total_stock_value, fill = enron$poi)
+```
+
+```{r total payments}
+qplot(enron$total_payments, fill = enron$poi) + scale_x_continuous(
+    limits = c(0,1.2e7))
+```
+
+```{r salary to stock value}
+qplot(enron$salary/enron$total_stock_value, fill = enron$poi) +
+    scale_x_continuous(limits = c(0,3))
+```
+
