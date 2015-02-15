@@ -20,7 +20,7 @@ The grader or other viewer may find my applicable project deliverables at:
  
 ## Other files in this repo:
 
- * **workflow.ipynb** -- My workflow -- test code, charts, rough draft. Fairly unstructured. View at [nbviewer]()**broken link**
+ * **workflow.ipynb** -- My workflow -- test code, charts, rough draft. Fairly unstructured. View at [nbviewer](http://nbviewer.ipython.org/github/tybyers/Udacity_IntroMachineLearning/blob/master/workflow.ipynb)
  * **./tools** -- Udacity-provided tools directory.  Moved to this repo in case the grader just wants to clone the repo to run code.
  * **final_project_dataset.pkl** -- Udacity-provided dataset
  * **enron_exploration.(Rmd/html/pdf)** -- Conducted some bit of EDA in RStudio at the beginning of the project.  These are the applicable files.
