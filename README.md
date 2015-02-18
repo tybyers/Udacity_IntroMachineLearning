@@ -12,7 +12,7 @@ contact: tybyers@gmail.com
 
 The grader or other viewer may find my applicable project deliverables at:
 
- * Final Project Write-up: Question_Responses.ipynb or [iPython Notebook Viewer](http://nbviewer.ipython.org/github/tybyers/Udacity_IntroMachineLearning/blob/master/Question_Responses.ipynb)
+ * Final Project Write-up: **Question_Responses.ipynb** or [iPython Notebook Viewer](http://nbviewer.ipython.org/github/tybyers/Udacity_IntroMachineLearning/blob/master/Question_Responses.ipynb)
  * Pickle files: **my_dataset.pkl**, **my_classifier.pkl**, **my_feature_list.pkl**
  * Machine Learning file: **poi_id.py** (run this file if needed)
  * Tester file: **tester.py** (unmodified from Udacity-distributed code)
