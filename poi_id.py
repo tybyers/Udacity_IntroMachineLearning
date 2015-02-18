@@ -3,7 +3,7 @@ import sys
 import pickle
 import numpy as np
 from ggplot import *
-#sys.path.append("../tools/") # moved this directory to local to make 
+sys.path.append("../tools/") # moved this directory to local to make 
 								# it easy to put all in one git repo
 sys.path.append("./tools/")
     
@@ -65,15 +65,6 @@ def algorithm(data_dict, features_list):
     pickle.dump(data_dict, open("my_dataset.pkl", "w") )
     pickle.dump(features_list, open("my_feature_list.pkl", "w") )
     
-def load_data():
-    ### load the dictionary containing the dataset
-    data_dict = pickle.load(open("final_project_dataset.pkl", "r") )
-    
-    data_dict.pop('TOTAL',0)  # spreadsheet phenomenon
-    data_dict.pop('LOCKHART EUGENE E',0)  # all data 0 or N/A -- not helpful
-    
-    return data_dict
-    
 def create_features(data_dict):
     
     ### if you are creating any new features, you might want to do that here
@@ -94,6 +85,14 @@ def create_features(data_dict):
      
     return data_dict
 
+def load_data():
+    ### load the dictionary containing the dataset
+    data_dict = pickle.load(open("final_project_dataset.pkl", "r") )
+    
+    data_dict.pop('TOTAL',0)  # spreadsheet phenomenon
+    data_dict.pop('LOCKHART EUGENE E',0)  # all data 0 or N/A -- not helpful
+    
+    return data_dict
 
 def main():
     data_dict = load_data()
